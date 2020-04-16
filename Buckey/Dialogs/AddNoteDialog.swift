@@ -19,7 +19,6 @@ class AddNoteDialog: UIViewController {
     @IBOutlet private weak var titleTextfield: AppTextfield!
     @IBOutlet private weak var noteTextview: BaseTextView!
     @IBOutlet private weak var noteTextviewHeight: NSLayoutConstraint!
-    @IBOutlet private weak var subtitleTextfield: AppTextfield!
     @IBOutlet private weak var saveButton: AppButton!
     
     //MARK: - Properties
