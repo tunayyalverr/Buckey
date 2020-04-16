@@ -32,6 +32,7 @@ class NotesPresenter: NotesViewToPresenterProtocol {
     }
     
     func deleteNote(index: Int) {
+        notes?[index].delete()
         notes?.remove(at: index)
         view.didDeleteNote(index: index)
     }

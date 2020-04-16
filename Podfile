@@ -9,5 +9,6 @@ target 'Buckey' do
 
   pod 'Realm'
   pod 'RealmSwift'
+  pod 'IQKeyboardManagerSwift', '~> 6.2.0'
 
 end

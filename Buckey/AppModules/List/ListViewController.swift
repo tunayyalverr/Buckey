@@ -30,6 +30,7 @@ class ListViewController: UIViewController {
     func prepare() {
         self.navigationItem.title = Strings.listTitle
         tableView.register(ListTableViewCell.self)
+        tableView.register(EmptyTableViewCell.self)
     }
     
     func addNavigationBarButtons() {
@@ -51,7 +52,6 @@ extension ListViewController: ListPresenterToViewProtocol {
     }
     
     func didDeleteList(index: Int) {
-//        tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .fade)
         self.tableView.reloadData()
     }
 }
@@ -65,14 +65,32 @@ extension ListViewController: AddListDialogDelegate {
 
 //MARK: - TableView DataSource + Delegate
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if presenter.lists?.count == 0 {
+            return tableView.frame.height
+        }else {
+            return UITableView.automaticDimension
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.lists?.count ?? 0
+        if presenter.lists?.count == 0 {
+            return 1
+        }else {
+            return presenter.lists?.count ?? 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ListTableViewCell = tableView.dequeueReusableCell()
-        cell.list = presenter.lists?[indexPath.row]
-        return cell
+        if presenter.lists?.count == 0 {
+            let cell: EmptyTableViewCell = tableView.dequeueReusableCell()
+            return cell
+        }else {
+            let cell: ListTableViewCell = tableView.dequeueReusableCell()
+            cell.list = presenter.lists?[indexPath.row]
+            return cell
+        }
     }
     
     //MARK: - Did Select
@@ -83,7 +101,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     
     //MARK: - Swipe
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .destructive, title: "Sil" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
+        let delete = UITableViewRowAction(style: .destructive, title: Strings.delete , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
             self.presenter.deleteList(index: indexPath.row)
           })
           return [delete]

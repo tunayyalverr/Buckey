@@ -29,6 +29,7 @@ class NotesViewController: UIViewController {
     func prepare() {
         self.navigationItem.title = presenter.list.title
         tableView.register(NoteTableViewCell.self)
+        tableView.register(EmptyTableViewCell.self)
     }
     
     func addNavigationBarButtons() {
@@ -50,7 +51,7 @@ extension NotesViewController: NotesPresenterToViewProtocol {
     }
     
     func didDeleteNote(index: Int) {
-        tableView.deleteRows(at: [IndexPath(row: index, section: 0)], with: .fade)
+        self.tableView.reloadData()
     }
 }
 
@@ -70,20 +71,46 @@ extension NotesViewController: NotesDetailViewControllerDelegate {
 
 //MARK: - TableView DataSource + Delegate
 extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if presenter.notes?.count == 0 {
+            return tableView.frame.height
+        }else {
+            return UITableView.automaticDimension
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.notes?.count ?? 0
+        if presenter.notes?.count == 0 {
+            return 1
+        }else {
+            return presenter.notes?.count ?? 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: NoteTableViewCell = tableView.dequeueReusableCell()
-        cell.note = presenter.notes?[indexPath.row]
-        return cell
+        if presenter.notes?.count == 0 {
+            let cell: EmptyTableViewCell = tableView.dequeueReusableCell()
+            return cell
+        }else {
+            let cell: NoteTableViewCell = tableView.dequeueReusableCell()
+            cell.note = presenter.notes?[indexPath.row]
+            return cell
+        }
     }
     
     //MARK: - Did Select
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let note = presenter.notes?[indexPath.row] else { return }
         presenter.noteTapped(note, delegate: self)
+    }
+    
+    //MARK: - Swipe
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: Strings.delete , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
+            self.presenter.deleteNote(index: indexPath.row)
+          })
+          return [delete]
     }
     
 }

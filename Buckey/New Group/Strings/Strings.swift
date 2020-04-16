@@ -14,6 +14,7 @@ class Strings {
     static var ok                         = "Tamam"
     static var sholdNotEmpty              = "boş olmamalıdır."
     static var errorTitle                 = "Oopsy"
+    static var delete                     = "Sil"
     
     static var listTitle                  = "Listem"
     static var addListDialogTitle         = "Liste Ekle"
@@ -22,5 +23,7 @@ class Strings {
     static var addNoteDialogTitle                 = "Not Ekle"
     static var addNoteDialogTitlePlaceholder      = "Not Adı"
     static var addNoteDialogSubtitlePlaceholder   = "Not"
+    
+    static var emptyList   = "Bu Liste Boş Görünüyor."
     
 }

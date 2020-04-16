@@ -1,4 +1,5 @@
 PODS:
+  - IQKeyboardManagerSwift (6.2.1)
   - Realm (4.4.0):
     - Realm/Headers (= 4.4.0)
   - Realm/Headers (4.4.0)
@@ -6,18 +7,21 @@ PODS:
     - Realm (= 4.4.0)
 
 DEPENDENCIES:
+  - IQKeyboardManagerSwift (~> 6.2.0)
   - Realm
   - RealmSwift
 
 SPEC REPOS:
   trunk:
+    - IQKeyboardManagerSwift
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: 0f0ae8935360b4003e6ea1ac7c19898f01e2f7c7
   Realm: e125f464884cda953ebefe70c671b75b03b81b9b
   RealmSwift: 33656a42bd300959a081fc13347376bc478071af
 
-PODFILE CHECKSUM: ff002d0e435e03e715a059ec57f92ce92df7abd0
+PODFILE CHECKSUM: 6536116a2af61c58af644e6a763693a2568a9352
 
 COCOAPODS: 1.9.1

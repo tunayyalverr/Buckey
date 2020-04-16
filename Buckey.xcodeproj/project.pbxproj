@@ -61,6 +61,8 @@
 		682E4AF124479AF6008EC4A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 682E4AEF24479AF6008EC4A6 /* LaunchScreen.storyboard */; };
 		682E4AFA24479B60008EC4A6 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682E4AF924479B60008EC4A6 /* Colors.xcassets */; };
 		68F6FF49244861EA007B60EB /* BaseTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6FF48244861EA007B60EB /* BaseTextView.swift */; };
+		68F6FF4C24488F6A007B60EB /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F6FF4A24488F6A007B60EB /* EmptyTableViewCell.swift */; };
+		68F6FF4D24488F6A007B60EB /* EmptyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F6FF4B24488F6A007B60EB /* EmptyTableViewCell.xib */; };
 		F6307548ADFD634E3C05BE58 /* Pods_Buckey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4A1228AC1E63954D08B53E /* Pods_Buckey.framework */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +126,8 @@
 		682E4AF224479AF6008EC4A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		682E4AF924479B60008EC4A6 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		68F6FF48244861EA007B60EB /* BaseTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextView.swift; sourceTree = "<group>"; };
+		68F6FF4A24488F6A007B60EB /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
+		68F6FF4B24488F6A007B60EB /* EmptyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +196,8 @@
 		680626CE2447A04100E36E3D /* UITableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				68F6FF4A24488F6A007B60EB /* EmptyTableViewCell.swift */,
+				68F6FF4B24488F6A007B60EB /* EmptyTableViewCell.xib */,
 				680626DC2447A29A00E36E3D /* ListTableViewCell.swift */,
 				680626DD2447A29A00E36E3D /* ListTableViewCell.xib */,
 				680626FB2447AAC600E36E3D /* NoteTableViewCell.swift */,
@@ -495,6 +501,7 @@
 				680626FE2447AAC600E36E3D /* NoteTableViewCell.xib in Resources */,
 				6806272B2447DFEC00E36E3D /* AddNoteDialog.xib in Resources */,
 				680626F52447AA7100E36E3D /* Notes.storyboard in Resources */,
+				68F6FF4D24488F6A007B60EB /* EmptyTableViewCell.xib in Resources */,
 				680626EC2447A5F300E36E3D /* sf-pro-rounded_medium.ttf in Resources */,
 				680626ED2447A5F600E36E3D /* sf-pro-rounded_regular.ttf in Resources */,
 				682E4AEE24479AF6008EC4A6 /* Assets.xcassets in Resources */,
@@ -558,6 +565,7 @@
 				680627382447EAF300E36E3D /* NoteDetailProtocols.swift in Sources */,
 				680627112447B09300E36E3D /* CorneredView.swift in Sources */,
 				680627002447AAFF00E36E3D /* ColorView.swift in Sources */,
+				68F6FF4C24488F6A007B60EB /* EmptyTableViewCell.swift in Sources */,
 				680626C824479EB600E36E3D /* ListRouter.swift in Sources */,
 				680626F92447AA7100E36E3D /* NotesProtocols.swift in Sources */,
 				6806271E2447B77A00E36E3D /* CircleButton.swift in Sources */,
