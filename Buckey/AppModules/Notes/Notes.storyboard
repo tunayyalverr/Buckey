@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notes View Controller-->
+        <scene sceneID="qiM-qD-u1k">
+            <objects>
+                <viewController storyboardIdentifier="NotesViewController" automaticallyAdjustsScrollViewInsets="NO" id="d6O-PX-CJm" customClass="NotesViewController" customModule="Buckey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="APb-0N-ihG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UDN-he-jkg" customClass="BaseTableView" customModule="Buckey" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="d6O-PX-CJm" id="9Rc-6V-uxO"/>
+                                    <outlet property="delegate" destination="d6O-PX-CJm" id="a2F-Py-V12"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="UDN-he-jkg" secondAttribute="bottom" id="0DQ-p4-psR"/>
+                            <constraint firstItem="UDN-he-jkg" firstAttribute="top" secondItem="zZF-ZR-XRZ" secondAttribute="top" id="45B-hP-gaC"/>
+                            <constraint firstItem="zZF-ZR-XRZ" firstAttribute="trailing" secondItem="UDN-he-jkg" secondAttribute="trailing" id="NST-DQ-M9E"/>
+                            <constraint firstItem="UDN-he-jkg" firstAttribute="leading" secondItem="zZF-ZR-XRZ" secondAttribute="leading" id="ccP-19-AfD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zZF-ZR-XRZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GBc-OB-BA7">
+                        <barButtonItem key="backBarButtonItem" title=" " id="bkc-4a-009"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="UDN-he-jkg" id="nnc-dn-jtf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aEs-ZC-4Kv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="837.68115942028987" y="1329.9107142857142"/>
+        </scene>
+    </scenes>
+</document>
