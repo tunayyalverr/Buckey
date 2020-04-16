@@ -87,21 +87,17 @@ class AddNoteDialog: UIViewController {
     }
     
     @IBAction func saveButtonTapped() {
-        guard titleTextfield.text != nil else {
+        if titleTextfield.text == nil || titleTextfield.text == "" {
             showEmptyError(fieldName: Strings.addListDialogPlaceholder)
-            return
-        }
-        
-        guard noteTextview.text != nil else {
-            showEmptyError(fieldName: Strings.addListDialogPlaceholder)
-            return
-        }
-        
-        switch style! {
-        case .add:
-            save()
-        case .edit:
-            edit()
+        }else if noteTextview.text == nil || noteTextview.text == "" {
+            showEmptyError(fieldName: Strings.addNoteDialogSubtitlePlaceholder)
+        }else {
+            switch style! {
+            case .add:
+                save()
+            case .edit:
+                edit()
+            }
         }
     }
     

@@ -47,11 +47,11 @@ class NotesViewController: UIViewController {
 // MARK: - NotesPresenterOutputDelegate
 extension NotesViewController: NotesPresenterToViewProtocol {
     func didGetNotes() {
-        self.tableView.reloadData()
+        tableView.reloadSections([0], with: .fade)
     }
     
     func didDeleteNote(index: Int) {
-        self.tableView.reloadData()
+        tableView.reloadSections([0], with: .fade)
     }
 }
 

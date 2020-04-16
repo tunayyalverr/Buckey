@@ -48,11 +48,11 @@ class ListViewController: UIViewController {
 // MARK: - ListPresenterOutputDelegate
 extension ListViewController: ListPresenterToViewProtocol {
     func didGetList() {
-        self.tableView.reloadData()
+        tableView.reloadSections([0], with: .fade)
     }
     
     func didDeleteList(index: Int) {
-        self.tableView.reloadData()
+        tableView.reloadSections([0], with: .fade)
     }
 }
 

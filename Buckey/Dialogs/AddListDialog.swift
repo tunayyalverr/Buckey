@@ -62,15 +62,15 @@ class AddListDialog: UIViewController {
     }
     
     @IBAction func saveButtonTapped() {
-        guard textfield.text != nil else {
+        if textfield.text == nil || textfield.text == "" {
             showEmptyError(fieldName: Strings.addListDialogPlaceholder)
-            return
+        }else {
+            let list = List.create(title: textfield.text!)
+            list.write()
+            self.delegate.didAddList(list)
+            self.dismiss(animated: true, completion: nil)
         }
         
-        let list = List.create(title: textfield.text!)
-        list.write()
-        self.delegate.didAddList(list)
-        self.dismiss(animated: true, completion: nil)
     }
     
 }

@@ -34,14 +34,14 @@ class BaseTextView: UITextView {
     
     private func commonInit() {
         delegate = self
-        self.layer.cornerRadius = 20
+        self.layer.cornerRadius = 22
         self.backgroundColor = .backgroundSecondary
         
         addPlaceholderLabel()
     }
     
     func addPlaceholderLabel() {
-        placeholderLabel = AppLabel(frame: CGRect(x: 20, y: 15, width: self.frame.width, height: 20))
+        placeholderLabel = AppLabel(frame: CGRect(x: 20, y: 13, width: self.frame.width, height: 20))
         placeholderLabel.textColor = .textSecondary
         placeholderLabel.translatesAutoresizingMaskIntoConstraints = true
         placeholderLabel.textAlignment = .left
@@ -49,7 +49,7 @@ class BaseTextView: UITextView {
         self.tintColor = .textPrimary
         self.textColor = .textPrimary
         self.font = .font(.regular, size: .primary)
-        textContainerInset = UIEdgeInsets(top: 15, left: 15, bottom: 10, right: 15)
+        textContainerInset = UIEdgeInsets(top: 15, left: 13, bottom: 10, right: 15)
         self.addSubview(placeholderLabel)
     }
         
